@@ -4,11 +4,11 @@ from openai import OpenAI  # type: ignore
 
 app = FastAPI()
 
-@app.get("/api")
+@app.get("/")
 def idea():
     client = OpenAI()
     prompt = [{"role": "user", "content": "Reply with a new business idea for AI Agents, formatted with headings, sub-headings and bullet points"}]
-    stream = client.chat.completions.create(model="gpt-5-nano", messages=prompt, stream=True)
+    stream = client.chat.completions.create(model="gpt-40-mini", messages=prompt, stream=True)
 
     def event_stream():
         for chunk in stream:
