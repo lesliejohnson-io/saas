@@ -4,7 +4,7 @@ from openai import OpenAI  # type: ignore
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/api")
 def idea():
     client = OpenAI()
     prompt = [{"role": "user", "content": "Reply with a new business idea for AI Agents, formatted with headings, sub-headings and bullet points"}]
