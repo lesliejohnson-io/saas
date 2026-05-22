@@ -1,4 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
 export default function Document() {
   return (
