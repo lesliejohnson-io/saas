@@ -1,7 +1,6 @@
-"use client"
 
 import Link from 'next/link';
-import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import { SignInButton, UserButton, Show} from '@clerk/nextjs';
 
 export default function Home() {
   return (
@@ -13,14 +12,14 @@ export default function Home() {
             IdeaGen
           </h1>
           <div>
-            <SignedOut>
+            <Show when="signed-out">
               <SignInButton mode="modal">
                 <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
                   Sign In
                 </button>
               </SignInButton>
-            </SignedOut>
-            <SignedIn>
+            </Show>
+            <Show when="signed-in">
               <div className="flex items-center gap-4">
                 <Link 
                   href="/product" 
@@ -30,7 +29,7 @@ export default function Home() {
                 </Link>
                 <UserButton />
               </div>
-            </SignedIn>
+            </Show>
           </div>
         </nav>
 
@@ -45,20 +44,20 @@ export default function Home() {
             Harness the power of AI to discover innovative business opportunities tailored for the AI agent economy
           </p>
           
-          <SignedOut>
+          <Show when="signed-out">
             <SignInButton mode="modal">
               <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all transform hover:scale-105">
                 Get Started Free
               </button>
             </SignInButton>
-          </SignedOut>
-          <SignedIn>
+          </Show>
+          <Show when="signed-in">
             <Link href="/product">
               <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all transform hover:scale-105">
                 Generate Ideas Now
               </button>
             </Link>
-          </SignedIn>
+            </Show>
         </div>
       </div>
     </main>
