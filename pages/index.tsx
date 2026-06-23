@@ -1,5 +1,7 @@
+"use client"
+
 import Link from 'next/link';
-import { SignInButton, UserButton, Show } from '@clerk/nextjs';
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 
 export default function Home() {
   return (
@@ -11,14 +13,14 @@ export default function Home() {
             IdeaGen Pro
           </h1>
           <div>
-            <Show when="signed-out">
+            <SignedOut>
               <SignInButton mode="modal">
                 <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
                   Sign In
                 </button>
               </SignInButton>
-            </Show>
-            <Show when="signed-in">
+            </SignedOut>
+            <SignedIn>
               <div className="flex items-center gap-4">
                 <Link 
                   href="/product" 
@@ -28,7 +30,7 @@ export default function Home() {
                 </Link>
                 <UserButton showName={true} />
               </div>
-            </Show>
+            </SignedIn>
           </div>
         </nav>
 
@@ -54,20 +56,20 @@ export default function Home() {
             </ul>
           </div>
           
-          <Show when="signed-out">
+          <SignedOut>
             <SignInButton mode="modal">
               <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all transform hover:scale-105">
                 Start Your Free Trial
               </button>
             </SignInButton>
-          </Show>
-          <Show when="signed-in">
+          </SignedOut>
+          <SignedIn>
             <Link href="/product">
               <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all transform hover:scale-105">
                 Access Premium Features
               </button>
             </Link>
-          </Show>
+          </SignedIn>
         </div>
       </div>
     </main>
