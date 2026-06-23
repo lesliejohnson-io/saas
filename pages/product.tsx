@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, FormEvent } from 'react';
+import { useState, SyntheticEvent } from 'react';
 import { useAuth } from '@clerk/nextjs';
 import DatePicker from 'react-datepicker';
 import ReactMarkdown from 'react-markdown';
@@ -21,7 +21,7 @@ function ConsultationForm() {
     const [output, setOutput] = useState('');
     const [loading, setLoading] = useState(false);
 
-    async function handleSubmit(e: FormEvent) {
+    async function handleSubmit(e: SyntheticEvent) {
         e.preventDefault();
         setOutput('');
         setLoading(true);
