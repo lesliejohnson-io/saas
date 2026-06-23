@@ -4,11 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Business Idea Generator</title>
-        <meta name="description" content="AI-powered business idea generation" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+        <title>Healthcare Consultation Assistant</title>
+        <meta name="description" content="AI-powered medical consultation summaries" />
       </Head>
       <body>
         <Main />
