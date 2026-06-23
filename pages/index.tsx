@@ -13,25 +13,22 @@ export default function Home() {
             MediNotes Pro
           </h1>
           <div>
-            <SignedOut>
-              <SignInButton mode="modal">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
-                  Sign In
-                </button>
-              </SignInButton>
-            </SignedOut>
-            <SignedIn>
-              <div className="flex items-center gap-4">
-                <Link 
-                  href="/product" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors"
-                >
-                  Go to App
-                </Link>
-                <UserButton showName={true} />
-              </div>
-            </SignedIn>
-          </div>
+  <SignedOut>
+    <SignInButton mode="modal">
+      <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+        Sign In
+      </button>
+    </SignInButton>
+  </SignedOut>
+  <SignedIn>
+    <div className="flex items-center gap-4">
+      <Link href="/product" className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+        Go to App
+      </Link>
+      <UserButton />
+    </div>
+  </SignedIn>
+</div>
         </nav>
 
         {/* Hero Section */}
